@@ -22,7 +22,17 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('category.index')->withCategories($categories);
+        // return view('category.index')->withCategories($categories);
+        $user_type = auth()->user()->type;
+        if($user_type == 1 ){
+            return view('category.index')->withCategories($categories);
+        }if ($user_type == 2) {
+            return view('managerhome');
+        } else {
+            return view('home');
+        }
+        
+        
     }
 
     /**

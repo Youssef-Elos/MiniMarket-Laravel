@@ -35,11 +35,19 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
+                            @php $user_type = Auth::user()->type; @endphp
+                            @if($user_type == 1 ||$user_type == 1 )
                             <a href="/dashboard" class="dropdown-item">Dashboard</a>
-                            
                             <a href="/category" class="dropdown-item">Category</a>
+                            <a href="/admin/orders" class="dropdown-item">Orders</a>   
+                            @else
+                            <a href="/admin/orders" class="dropdown-item">Orders</a>    
+                            @endif
+                            
 
+                            
+
+                            
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">

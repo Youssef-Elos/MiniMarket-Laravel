@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes();
 Route::get('/', 'PagesController@home');
 Route::get('/home', 'PagesController@home');
 Route::get('/buy/{id}', 'PagesController@buy');
@@ -22,6 +22,7 @@ Route::get('admin/orders','admin\OrderController@index');
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
 
 Route::resource('admin', 'AdminController');
 

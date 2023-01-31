@@ -46,7 +46,7 @@
 									<div class="col-md-12">
 										<div class="input-group mb-3">
 											<div class="input-group-prepend">
-										    	<span class="input-group-text">$</span>
+										    	<span class="input-group-text">DH</span>
 										  	</div>
 										  	<input type="text" class="form-control" id="amount" disabled="true" value="{{ $product->price }}">
 										  	<div class="input-group-append">

@@ -28,7 +28,11 @@ class DashboardController extends Controller
     {
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
-        return view('dashboard')->withProducts($user->products);
+        $user_type = auth()->user()->type;
+        if($user_type == 1 || $user_type == 2){
+            return view('dashboard')->withProducts($user->products);
+        }else
+        return view('home');
     }
     
 }
